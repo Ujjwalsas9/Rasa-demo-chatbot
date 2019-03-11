@@ -1,0 +1,26 @@
+For rasa_nlu:
+---------------
+
+python3 -m rasa_nlu.train -c nlu_config.yml --data nlu.md -o models --fixed_model_name nlu --project current --verbose
+
+or
+python3 nlu_model.py
+
+
+
+
+For rasa core:
+---------------
+
+python3 -m rasa_core.train -d testbot_domain.yml -s data/stories.md -o models/dialogue/ 
+
+python3 -m rasa_core.run -d models/dialogue -u models/default//
+
+
+
+
+For rasa core in debug mode:
+--------------------------------
+python3 -m rasa_core.run -d models/dialogue -u models/nlu/default/testbotnlu --endpoints endpoints.yml --debug
+
+

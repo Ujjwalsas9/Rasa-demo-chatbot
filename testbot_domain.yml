@@ -1,0 +1,40 @@
+slots:
+  personid:
+    type: text
+  stockid:
+    type: text
+  matches:
+    type: unfeaturized
+
+intents:
+ - greet
+ - bye
+ - affirmative
+ - negative
+ - personid
+ - stockid
+ - inform
+
+entities:
+ - personid
+ - stockid
+
+templates:
+  utter_greet:
+    - 'Hello! How can I help?'
+  utter_goodbye:
+    - 'Talk to you later.'
+    - 'Bye bye :('
+  utter_ask_personid:
+    - 'Tell me your id please'
+    - 'May I know your id please?'
+  utter_ask_stock:
+    - 'Tell me the stock name please'
+    - 'Could you please tell me the stock name?'
+
+actions:
+ - utter_greet
+ - utter_goodbye
+ - utter_ask_stock
+ - utter_ask_personid
+ - action_db
